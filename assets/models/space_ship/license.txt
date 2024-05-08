@@ -1,0 +1,11 @@
+Model Information:
+* title:	space ship
+* source:	https://sketchfab.com/3d-models/space-ship-91aad43c4a7449278d10c362aeac1c12
+* author:	wildcake (https://sketchfab.com/wildcake)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "space ship" (https://sketchfab.com/3d-models/space-ship-91aad43c4a7449278d10c362aeac1c12) by wildcake (https://sketchfab.com/wildcake) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
