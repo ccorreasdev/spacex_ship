@@ -77,6 +77,7 @@ const init = async () => {
     models.getLoadedModels(1).position.z = -3;
     models.getLoadedModels(1).rotation.x = (15 * Math.PI) / 180;
     models.getLoadedModels(1).rotation.y = (180 * Math.PI) / 180;
+    models.getLoadedModels(1).rotation.y = (180 * Math.PI) / 180;
     //master.scene.add(models.getLoadedModels(1));
 
     models.getLoadedModels(2).mixer.clipAction(models.getLoadedModels(2).animations[0]).play();
@@ -89,7 +90,7 @@ const init = async () => {
     models.getLoadedModels(2).model.position.z = -3;
     models.getLoadedModels(2).model.rotation.x = (15 * Math.PI) / 180;;
     models.getLoadedModels(2).model.rotation.y = (180 * Math.PI) / 180;
-    models.getLoadedModels(2).model.rotation.z = 0;
+    models.getLoadedModels(2).model.rotation.z = (0 * Math.PI) / 180;
     master.scene.add(models.getLoadedModels(2).model);
 
     //Listeners
@@ -101,10 +102,11 @@ const init = async () => {
     htmlActionsListener(0);
 
 
-    const timeDelay = 15; // En segundos
+    const timeDelay = 15; // En segundos 14
 
     // Función para ejecutar las animaciones
     const animateModels = () => {
+        //Space background position animation
         gsap.to(models.getLoadedModels(0).model.position, {
             duration: timeDelay, x: -6.5, y: 800, z: -500, onComplete: () => {
                 gsap.to(models.getLoadedModels(0).model.rotation, {
@@ -124,6 +126,28 @@ const init = async () => {
                 });
             }
         });
+
+
+        //Space ship position animation
+        gsap.to(models.getLoadedModels(2).model.rotation, {
+            delay: timeDelay, duration: timeDelay, z: (15 * Math.PI) / 180, onComplete: () => {
+                gsap.to(models.getLoadedModels(2).model.rotation, {
+                    delay: 0, duration: timeDelay, z: (0 * Math.PI) / 180, onComplete: () => {
+                        gsap.to(models.getLoadedModels(2).model.rotation, {
+                            delay: 0, duration: timeDelay, z: (-15 * Math.PI) / 180, onComplete: () => {
+                                gsap.to(models.getLoadedModels(2).model.rotation, {
+                                    delay: 0, duration: timeDelay, z: (0 * Math.PI) / 180
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+
+
+
     };
 
     // Iniciar el ciclo de animaciones
