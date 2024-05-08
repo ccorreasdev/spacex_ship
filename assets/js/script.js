@@ -93,8 +93,23 @@ const init = async () => {
     models.getLoadedModels(2).model.rotation.z = (0 * Math.PI) / 180;
     master.scene.add(models.getLoadedModels(2).model);
 
+
+    const width = window.innerWidth;
+
+    if (width > 1280) {
+        models.getLoadedModels(2).model.scale.set(1, 1, 1)
+    }
+    else if (width >= 1024) {
+        models.getLoadedModels(2).model.scale.set(0.8, 0.8, 0.8)
+    }
+    else if (width >= 768) {
+        models.getLoadedModels(2).model.scale.set(0.6, 0.6, 0.6)
+    } else if (width >= 600) {
+        models.getLoadedModels(2).model.scale.set(0.4, 0.4, 0.4)
+    }
+
     //Listeners
-    windowResizeListener(master);
+    windowResizeListener(master, models.getLoadedModels(2).model);
     mouseMove.mouseMoveListener();
     scrollWindow.scrollListener();
     keyListener.init();

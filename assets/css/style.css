@@ -189,3 +189,9 @@ body {}
     }
 
 }
+
+@media(max-width: 500px) {
+    .section__title {
+        font-size: 6rem;
+    }
+}
